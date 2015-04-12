@@ -1,6 +1,6 @@
 <?php
 
-abstract class Dbclass
+class Dbclass
 {
     public function __construct($dbhost, $dbname, $dbuser, $dbpassword)
     {
