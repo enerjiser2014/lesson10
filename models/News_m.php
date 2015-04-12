@@ -10,7 +10,6 @@ class News extends Article
     protected $source;
     protected $preview;
 
-
     public function __construct($dbObject)
     {
         $this->dbObject = $dbObject;
@@ -32,6 +31,14 @@ class News extends Article
     {
         $sql = 'SELECT * FROM news WHERE id=' . $id;
         return $this->dbObject->getRecords($sql)[0];
+    }
+
+    public function addNews($title, $text, $date)
+    {
+        $sql = <<<QUERY
+        INSERT INTO news (text, title, date) VALUES ('{$text}', '{$title}', '{$date}')
+QUERY;
+        return $this->dbObject->sqlExec($sql);
     }
 
 }
