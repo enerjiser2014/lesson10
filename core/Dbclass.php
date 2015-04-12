@@ -13,12 +13,12 @@ class Dbclass
         mysql_select_db($dbname);
     }
 
-    protected  function addRecord($sql)
+    public  function sqlExec($sql)
     {
         return mysql_query($sql);
     }
 
-    protected  function getRecords($sql)
+    public   function getRecords($sql)
     {
         $res = mysql_query($sql);
         $ret = [];
@@ -28,7 +28,7 @@ class Dbclass
         return $ret;
     }
 
-    protected  function getRecord($sql)
+    public   function getRecord($sql)
     {
         $this->getRecords($sql)[0];
     }
