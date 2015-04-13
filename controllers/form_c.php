@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-<form action="../controllers/addnews.php" method="POST">
+<form action="../controllers/addnews_c.php" method="POST">
     <input type="text" name="title"><br>
     <textarea rows="10" cols="50" name="text"></textarea><br>
     <input type="submit">
